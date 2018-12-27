@@ -22,7 +22,7 @@ class disable_transparent_hugepage {
   ->
   Service['disable-transparent-hugepage']
 
-  if ($::osfamily == 'RedHat') and
+  if ($::operatingsystem == 'RedHat') and
     (versioncmp($::operatingsystemmajrelease, '6') >= 0) {
 
     file { '/etc/tuned/custom':
