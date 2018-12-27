@@ -11,6 +11,7 @@ class disable_transparent_hugepage {
     group   => 'root',
     mode    => '0755',
     content => template("${module_name}/disable-transparent-hugepage.erb"),
+    notify  => Service['disable-transparent-hugepage'],
   }
 
   service { 'disable-transparent-hugepage':
